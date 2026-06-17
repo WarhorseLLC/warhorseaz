@@ -51,7 +51,7 @@ nav a:hover { color: var(--amb); }
 /* HERO */
 .hero {
   background: var(--blk); display: flex; align-items: center;
-  padding: 6rem 2.5rem 5rem; position: relative; overflow: hidden;
+  padding: 5rem 2.5rem; position: relative; overflow: hidden;
 }
 .hero-grid-bg {
   position: absolute; inset: 0; pointer-events: none;
@@ -64,7 +64,10 @@ nav a:hover { color: var(--amb); }
   background: radial-gradient(circle, rgba(232,144,10,.1) 0%, transparent 70%);
   pointer-events: none;
 }
-.hero-inner { position: relative; max-width: 100%; }
+.hero-inner { position: relative; max-width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 2rem; overflow: hidden; }
+.hero-text { flex: 1; min-width: 0; }
+.hero-seal { flex-shrink: 0; width: clamp(180px, 18vw, 280px); opacity: .92; }
+.hero-seal img { width: 100%; border-radius: 50%; display: block; }
 .hero-label {
   font-family: 'Barlow Condensed', sans-serif;
   font-size: .72rem; font-weight: 700; letter-spacing: .28em; text-transform: uppercase;
@@ -317,6 +320,8 @@ footer {
   nav ul { display: none; }
   nav { padding: 0 1.25rem; }
   .hero { padding: 4rem 1.25rem 3.5rem; }
+  .hero-inner { flex-direction: column-reverse; gap: 2rem; }
+  .hero-seal { width: clamp(140px, 50vw, 220px); margin: 0 auto; }
   section { padding: 3rem 1.25rem; }
   .coverage-inner { flex-direction: column; gap: 2rem; }
   footer { flex-direction: column; text-align: center; }
@@ -343,6 +348,7 @@ footer {
   <div class="hero-grid-bg"></div>
   <div class="hero-glow"></div>
   <div class="hero-inner">
+    <div class="hero-text">
     <div class="hero-label">Phoenix Metro · Exterior Maintenance</div>
     <h1>Parking Lot &amp; Exterior <em>Cleaning.</em></h1>
     <p class="hero-sub">Veteran-owned Arizona business serving the West Valley and surrounding Phoenix metro communities.</p>
@@ -352,6 +358,10 @@ footer {
       <span class="badge">Maricopa County</span>
     </div>
     <a href="#" onclick="openModal();return false;" class="hero-cta">Request a Quote</a>
+    </div>
+    <div class="hero-seal">
+      <img src="warhorse_seal.png" alt="Warhorse LLC — Hard Work. Higher Standards.">
+    </div>
   </div>
 </section>
 
